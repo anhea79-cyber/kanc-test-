@@ -1,0 +1,8 @@
+{
+  "name": "kanc-research-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "가상 데이터 기반 KANC 연구과제 관리 연습용 웹앱",
+  "scripts": { "start": "node server.cjs", "test": "node --test" },
+  "engines": { "node": ">=18" }
+}
