@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="가상 데이터로 연습하는 KANC 연구과제 관리 대시보드">
+  <title>KANC 연구과제 관리 · 연습용</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="projects.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">K</span><span>KANC <span class="brand-sub">연구과제 관리</span></span></div><span class="practice">연습용</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">RESEARCH OVERVIEW</p><h1>연구과제 현황</h1><p class="subtitle">연도별 연구과제와 연구비를 한눈에 확인하세요.</p></div><div class="filter"><label for="year-filter">조회 연도</label><select id="year-filter"><option value="all">전체 연도</option></select></div></div>
+    <aside class="notice"><span aria-hidden="true">ⓘ</span> 이 화면의 모든 과제·이름·연구비는 연습용 가상 데이터입니다.</aside>
+    <section class="stats" aria-label="선택한 연도의 요약" aria-live="polite" aria-atomic="true">
+      <article class="stat"><p>총 연구비</p><strong id="total-budget">—</strong><span>선택한 과제의 연구비 합계</span></article>
+      <article class="stat"><p>전체 과제</p><strong id="total-count">—</strong><span>조회 조건에 해당하는 과제</span></article>
+      <article class="stat"><p><i class="dot active"></i>진행 중</p><strong id="active-count">—</strong><span>연구를 진행하고 있는 과제</span></article>
+      <article class="stat"><p><i class="dot closed"></i>종료</p><strong id="closed-count">—</strong><span>연구가 완료된 과제</span></article>
+    </section>
+    <section class="list-panel" aria-labelledby="list-heading"><div class="list-title"><div><h2 id="list-heading">과제 목록 <span id="list-count"></span></h2><p id="selection-description">전체 연도의 과제를 표시합니다.</p></div><span class="unit">연구비 단위: 원</span></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="과제 목록 표, 좁은 화면에서는 좌우로 스크롤하세요">
+        <table><caption class="sr-only">과제명, 책임자, 연도, 연구 기간, 연구비, 상태</caption><thead><tr><th scope="col">과제명</th><th scope="col">책임자</th><th scope="col">연도</th><th scope="col">연구 기간</th><th scope="col" class="number">연구비</th><th scope="col">상태</th></tr></thead><tbody id="project-rows"></tbody></table>
+      </div><p id="empty-state" class="empty" hidden>선택한 연도에 해당하는 과제가 없습니다.</p>
+    </section>
+    <p class="help">조회 연도는 과제의 기준 연도입니다. 연구비는 해당 과제에 입력된 총액이며, 상태는 가상 데이터에 지정된 값입니다.</p>
+    <noscript><p class="notice">과제 정보를 보려면 브라우저의 JavaScript 사용을 허용해 주세요.</p></noscript>
+    <footer><span>KANC 연구과제 관리</span><span>가상 데이터 · 학습 및 실습용</span></footer>
+  </main>
+</body>
+</html>
